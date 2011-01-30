@@ -5,11 +5,17 @@ class AuthController < ApplicationController
   end
 
   def logout
+    session['logged_in'] = false
   end
 
   def index
-    @access_token = session['fbook'] || 192551997440118
-    @logged_in = session['logged_in'] || false;
+    if session['logged_in']
+      @access_token = session['fbook']
+      @logged_in = session['logged_in']
+    else
+      @access_token = 192551997440118
+      @logged_in = false;
+    end
   end
 
 end
