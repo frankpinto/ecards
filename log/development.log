@@ -81,3 +81,104 @@ Completed in 36ms (View: 31, DB: 1) | 200 OK [http://localhost/auth/login]
 
 Processing AuthController#login (for 127.0.0.1 at 2011-01-29 22:19:14) [GET]
 Completed in 7ms (View: 2, DB: 1) | 200 OK [http://localhost/auth/login]
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AuthController#index (for 127.0.0.1 at 2011-01-29 22:44:30) [GET]
+Rendering auth/index
+Completed in 22ms (View: 17, DB: 1) | 200 OK [http://localhost/auth/index]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AuthController#index (for 127.0.0.1 at 2011-01-29 22:44:55) [GET]
+Rendering auth/index
+Completed in 6ms (View: 2, DB: 0) | 200 OK [http://localhost/auth/index]
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AuthController#index (for 127.0.0.1 at 2011-01-29 22:45:01) [GET]
+Rendering auth/index
+Completed in 7ms (View: 2, DB: 1) | 200 OK [http://localhost/auth/index]
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AuthController#index (for 127.0.0.1 at 2011-01-29 22:47:37) [GET]
+Rendering auth/index
+Completed in 18ms (View: 14, DB: 1) | 200 OK [http://localhost/auth/index]
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AuthController#index (for 127.0.0.1 at 2011-01-29 22:48:36) [GET]
+Rendering auth/index
+Completed in 6ms (View: 2, DB: 1) | 200 OK [http://localhost/auth/index]
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AuthController#login (for 127.0.0.1 at 2011-01-29 22:48:52) [GET]
+Rendering auth/login
+Completed in 20ms (View: 15, DB: 1) | 200 OK [http://localhost/auth/login]
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AuthController#index (for 127.0.0.1 at 2011-01-29 22:48:57) [GET]
+Rendering auth/index
+Completed in 7ms (View: 2, DB: 1) | 200 OK [http://localhost/auth/index]
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AuthController#index (for 127.0.0.1 at 2011-01-29 22:49:39) [GET]
+Rendering auth/index
+Completed in 21ms (View: 16, DB: 1) | 200 OK [http://localhost/auth/index]
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AuthController#index (for 127.0.0.1 at 2011-01-29 22:49:49) [GET]
+Rendering auth/index
+Completed in 7ms (View: 2, DB: 1) | 200 OK [http://localhost/auth/index]
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AuthController#index (for 127.0.0.1 at 2011-01-29 22:53:09) [GET]
+Rendering auth/index
+Completed in 20ms (View: 15, DB: 1) | 200 OK [http://localhost/auth/index]
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AuthController#index (for 127.0.0.1 at 2011-01-29 23:13:06) [GET]
+Rendering auth/index
+Completed in 21ms (View: 16, DB: 1) | 200 OK [http://localhost/auth/index]
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AuthController#index (for 127.0.0.1 at 2011-01-29 23:14:29) [GET]
+Rendering template within layouts/application
+Rendering auth/index
+Completed in 39ms (View: 33, DB: 1) | 200 OK [http://localhost/auth/index]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AuthController#index (for 127.0.0.1 at 2011-01-29 23:16:34) [GET]
+Rendering template within layouts/application
+Rendering auth/index
+Completed in 27ms (View: 21, DB: 0) | 200 OK [http://localhost/auth/index]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AuthController#index (for 127.0.0.1 at 2011-01-29 23:25:07) [GET]
+Rendering template within layouts/application
+Rendering auth/index
+Completed in 34ms (View: 29, DB: 0) | 200 OK [http://localhost/auth/index]
