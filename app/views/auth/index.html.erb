@@ -1,2 +1,24 @@
 <div id="fb-root"></div>
-<fb:login-button>Login with Facebook</fb:login-button>
+  <% if @logged_in %>
+    <a id="birthdays" href="#">See All Birthdays</a>
+  <% else %>
+    <a href="http://www.facebook.com/dialog/oauth/?scope=email,user_birthday,friends_birthday&client_id=<%= @access_token %>&redirect_uri=http://tangibleecards.com/auth/login&response_type=token" class="fb_button fb_button_medium">
+    <span class="fb_button_text">Login with Facebook</span>
+    </a>
+  <% end %>
+<script type="text/javascript" language="javascript" charset="utf-8">
+//<![CDATA[
+  $(document).ready(function() {
+    $('#birthdays').click(function() {
+      FB.api('/me/friends?access_token=<%= @access_token %>', function(response) {
+        string = '';
+        for (elem in response)
+        {
+          string += elem + ': ' + response[elem] + "\n";
+        }
+        alert(string);
+      });
+    });
+  })
+//]]>
+</script>

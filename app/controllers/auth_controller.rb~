@@ -1,12 +1,15 @@
 class AuthController < ApplicationController
   def login
-    render :text => 'hello'
+    session['fbook'] = params['token']
+    session['logged_in'] = true
   end
 
   def logout
   end
 
   def index
+    @access_token = session['fbook'] || 192551997440118
+    @logged_in = session['logged_in'] || false;
   end
 
 end
