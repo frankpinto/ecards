@@ -1,3 +1,5 @@
+/* Facebook styles */
+
 .fb_button, .fb_button_rtl {
     background: url("http://static.ak.fbcdn.net/rsrc.php/zL/r/FGFbc80dUKj.png") no-repeat scroll 0 0 #29447E;
     cursor: pointer;
@@ -26,4 +28,37 @@ a.fb_button:active .fb_button_text, a.fb_button_rtl:active .fb_button_text, .fb_
     border-bottom: 1px solid #29447E;
     border-top: 1px solid #45619D;
     text-shadow: none;
+}
+
+/* Start Page Styles */
+
+.centered {
+  margin: 0 auto;
+}
+
+div#logo {
+  width: 300px;
+}
+
+img.logo {
+  width: 300px;
+}
+
+div.wrapper {
+  width: 100%;
+  min-height: 800px;
+}
+
+div#content {
+  width: 1000px;
+}
+
+div.box {
+  width: 25%;
+  height: 50%;
+  min-height: 200px;
+  padding: 2px;
+  margin: 3%;
+  border: 4px dotted black;
+  float: left;
 }
