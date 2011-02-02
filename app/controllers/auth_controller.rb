@@ -1,21 +1,37 @@
+require 'lib/Authentication'
+
 class AuthController < ApplicationController
-  def login
-    session['fbook'] = params['access_token']
-    session['logged_in'] = true
-  end
+  include ::Authentication
+  before_filter :check_login, :only => 'list'
 
-  def logout
-    session['logged_in'] = false
-  end
-
-  def index
-    if session['logged_in']
-      @access_token = session['fbook']
-      @logged_in = session['logged_in']
-    else
-      @access_token = 192551997440118
-      @logged_in = false;
+  def check_login
+    if !logged_in?
+      redirect_to 'index'
     end
   end
 
+  def login
+    if params['access_token']
+      graph = Koala::Facebook::GraphAPI.new(params['access_token'])
+      logged_in true
+      redirect_to :controller => 'home', :action => 'list', :graph => graph
+    else
+      logged_in false
+      redirect_to 'index'
+    end
+  end
+
+  def logout
+    @access_token = Facebook::APP_ID.to_s
+    logged_in false
+    redirect_to 'index'
+  end
+
+  def index
+    if (@logged_in = logged_in?) && user_token?
+      @access_token = user_token
+    else
+      @access_token = reset_token
+    end
+  end
 end

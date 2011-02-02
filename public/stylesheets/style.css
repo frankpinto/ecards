@@ -32,6 +32,10 @@ a.fb_button:active .fb_button_text, a.fb_button_rtl:active .fb_button_text, .fb_
 
 /* Start Page Styles */
 
+body {
+  background: #B8C1DE;
+}
+
 .centered {
   margin: 0 auto;
 }
