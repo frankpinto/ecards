@@ -17,7 +17,7 @@ class AuthController < ApplicationController
       redirect_to :controller => 'home', :action => 'list', :graph => graph
     else
       logged_in false
-      redirect_to '/index'
+      redirect_to :action => 'index'
     end
   end
 
