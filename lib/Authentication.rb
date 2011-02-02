@@ -3,7 +3,7 @@ module Authentication
       session['logged_in'] || false
     end
 
-    def logged_in= t_value
+    def logged_in t_value
       session['logged_in'] = t_value
     end
   
