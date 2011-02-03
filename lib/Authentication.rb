@@ -8,14 +8,14 @@ module Authentication
     end
   
     def user_token?
-      session['access_token'] != Facebook::APP_ID.to_s 
+      session[:access_token] != Facebook::APP_ID.to_s 
     end
 
     def user_token= token
-      session['access_token'] = token
+      session[:access_token] = token
     end
 
     def reset_token 
-      session['access_token'] = Facebook::APP_ID.to_s 
+      session[:access_token] = Facebook::APP_ID.to_s 
     end
 end
