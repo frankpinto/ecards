@@ -1,5 +1,6 @@
 class AuthController < ApplicationController
   before_filter :check_login, :except => 'logout'
+  skip_before_filter :ensure_login
 
   def check_login
     if logged_in?
@@ -31,7 +32,7 @@ class AuthController < ApplicationController
   def index
     if (@logged_in = logged_in?) && user_token?
       @access_token = user_token
-      redirect_to :controller => 'home'
+      redirect_to :controller => 'home', :action => 'list'
     else
       @oauth = Koala::Facebook::OAuth.new
       @access_token = token

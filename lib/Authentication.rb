@@ -1,6 +1,6 @@
 module Authentication
     def logged_in?
-      session[:logged_in] || false
+      (session[:logged_in] == true) || false
     end
 
     def logged_in= t_value
