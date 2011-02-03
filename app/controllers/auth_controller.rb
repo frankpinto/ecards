@@ -1,18 +1,15 @@
-require 'lib/Authentication'
-
 class AuthController < ApplicationController
-  include ::Authentication
-  before_filter :check_login, :only => 'list'
+  before_filter :check_login
 
   def check_login
-    if !logged_in?
-      redirect_to 'index'
+    if logged_in?
+      redirect_to :controller => 'home'
     end
   end
 
   def login
-    if params['access_token']
-      graph = Koala::Facebook::GraphAPI.new(params['access_token'])
+    if params['code']
+      graph = Koala::Facebook::GraphAPI.new(params['code'])
       logged_in true
       redirect_to :controller => 'home', :action => 'list', :graph => graph
     else
@@ -22,7 +19,7 @@ class AuthController < ApplicationController
   end
 
   def logout
-    @access_token = Facebook::APP_ID.to_s
+    reset_token
     logged_in false
     redirect_to 'index'
   end
@@ -30,8 +27,9 @@ class AuthController < ApplicationController
   def index
     if (@logged_in = logged_in?) && user_token?
       @access_token = user_token
+      redirect_to :controller => 'home'
     else
-      @access_token = reset_token
+      @access_token = token
     end
   end
 end

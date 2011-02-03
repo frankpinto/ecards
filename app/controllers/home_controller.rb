@@ -1,9 +1,10 @@
 class HomeController < ApplicationController
   def list
-    if params[:code]
-      session[:access_token] = Koala::Facebook::OAuth.new(oauth_redirect_url).get_access_token(params[:code])
+    if params[:graph]
       @graph = params['graph']
       @friends = @graph.get_connections('me', 'likes')
+    else
+      @friends = ['Didn\'t work!']
     end
   end
 end
