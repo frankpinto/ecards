@@ -3,7 +3,7 @@ module Authentication
       session[:logged_in] || false
     end
 
-    def logged_in t_value
+    def logged_in= t_value
       session[:logged_in] = t_value
     end
   
@@ -11,12 +11,12 @@ module Authentication
       session[:access_token] != Facebook::APP_ID.to_s 
     end
 
-    def user_token *token
-      if token.empty?
-        session[:access_token]
-      else
-        session[:access_token] = token[0]
-      end
+    def user_token
+      user_token? ? session[:access_token] : token
+    end
+
+    def user_token= token
+      session[:access_token] = token[0]
     end
 
     def reset_token 
@@ -24,6 +24,14 @@ module Authentication
     end
 
     def token 
-      session[:access_token]
+      session[:access_token] || reset_token
+    end
+
+    def expires_at time
+      session[:expires_at] || Time.now - 10
+    end
+
+    def expires_at= time
+      session[:expires_at] = time
     end
 end

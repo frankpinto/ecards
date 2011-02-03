@@ -9,18 +9,22 @@ class AuthController < ApplicationController
 
   def login
     if params['code']
-      user_token params['code']
-      logged_in true
+      @oauth = Koala::Facebook::OAuth.new
+      @url = @oauth.url_for_access_token params['code']
+      result_hash = parse_token_string(@oauth.fetch_token_string params['code'])
+      user_token = result_hash['access_token']
+      expires_at = result_hash['expires'] + Time.now
+      logged_in = true
       redirect_to :controller => 'home', :action => 'list'
     else
-      logged_in false
+      logged_in = false
       redirect_to :action => 'index'
     end
   end
 
   def logout
     reset_token
-    logged_in false
+    logged_in = false
     redirect_to :action => 'index'
   end
 
@@ -29,6 +33,7 @@ class AuthController < ApplicationController
       @access_token = user_token
       redirect_to :controller => 'home'
     else
+      @oauth = Koala::Facebook::OAuth.new
       @access_token = token
     end
   end
