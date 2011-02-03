@@ -3,7 +3,7 @@ class AuthController < ApplicationController
 
   def check_login
     if logged_in?
-      redirect_to :controller => 'home'
+      redirect_to :controller => 'home', :action => 'list'
     end
   end
 
@@ -21,7 +21,7 @@ class AuthController < ApplicationController
   def logout
     reset_token
     logged_in false
-    redirect_to 'index'
+    redirect_to :action => 'index'
   end
 
   def index

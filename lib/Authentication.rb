@@ -15,7 +15,7 @@ module Authentication
       if token.empty?
         session[:access_token]
       else
-        session[:access_token] = token
+        session[:access_token] = token[0]
       end
     end
 
