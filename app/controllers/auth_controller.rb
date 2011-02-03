@@ -9,9 +9,9 @@ class AuthController < ApplicationController
 
   def login
     if params['code']
-      graph = Koala::Facebook::GraphAPI.new(params['code'])
+      user_token params['code']
       logged_in true
-      redirect_to :controller => 'home', :action => 'list', :graph => graph
+      redirect_to :controller => 'home', :action => 'list'
     else
       logged_in false
       redirect_to :action => 'index'

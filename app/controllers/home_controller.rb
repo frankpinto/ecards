@@ -1,7 +1,7 @@
 class HomeController < ApplicationController
   def list
-    if params[:graph]
-      @graph = params['graph']
+    if user_token?
+      @graph = Koala::Facebook::GraphAPI.new user_token
       @friends = @graph.get_connections('me', 'likes')
     else
       @friends = ['Didn\'t work!']
