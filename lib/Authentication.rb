@@ -20,6 +20,7 @@ module Authentication
     end
 
     def reset_token 
+      session.delete :expires_at
       session[:access_token] = Facebook::APP_ID.to_s 
     end
 

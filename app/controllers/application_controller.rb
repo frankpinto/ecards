@@ -9,6 +9,10 @@ class ApplicationController < ActionController::Base
   include ::Authentication  
 
   def ensure_login
+    if self.expires_at < Time.now
+      self.logged_in = false
+      reset_token
+    end
     if !logged_in?
       redirect_to :controller => 'auth'
     end    
