@@ -16,7 +16,7 @@ module Authentication
     end
 
     def user_token= token
-      session[:access_token] = token[0]
+      session[:access_token] = token
     end
 
     def reset_token 

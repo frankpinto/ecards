@@ -4,7 +4,7 @@ class HomeController < ApplicationController
       @graph = Koala::Facebook::GraphAPI.new user_token
       @friends = @graph.get_connections('me', 'likes')
     else
-      @friends = ['Didn\'t work!']
+      @friends = ["#{token}"]
     end
   end
 end
