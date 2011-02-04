@@ -24,9 +24,8 @@ class AuthController < ApplicationController
   end
 
   def login_extended
-    result_hash = params['access_token']
-    user_token = result_hash['access_token']
-    expires_at = result_hash['expires'] + Time.now
+    user_token = params['access_token']
+    expires_at = params['expires'] + Time.now
     logged_in = true
     redirect_to :controller => 'home', :action => 'list'
   end
