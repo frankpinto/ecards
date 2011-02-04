@@ -6,7 +6,7 @@
   <div id="content" class="centered">
     <div id="first" class="box">
       <!--<span class="fb_button_text">Login with Facebook</span>-->
-      <%= link_to 'Login with Facebook', @oauth.url_for_oauth_code(:permissions => 'user_birthday, friends_birthday', :callback => url_for(:controller => 'auth', :action => 'login', :only_path => false)) %>
+      <%= link_to 'Login with Facebook', @oauth.url_for_oauth_code(:permissions => 'user_birthday,friends_birthday', :callback => url_for(:controller => 'auth', :action => 'login', :only_path => false)) %>
     </div>
     <div id="second" class="box">
       
