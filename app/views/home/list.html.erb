@@ -1,3 +1,3 @@
-<% @friends.each do |friend| %>
-  <%= friend.inspect %><br />
-<% end %>
+<pre>
+<%= JSON.pretty_generate(@friends) %>
+</pre>
