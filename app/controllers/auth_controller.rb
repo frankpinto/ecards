@@ -11,8 +11,8 @@ class AuthController < ApplicationController
   def login
     if params['code']
       @oauth = Koala::Facebook::OAuth.new
-      @url = @oauth.url_for_access_token params['code']
-      result_hash = parse_token_string(@oauth.fetch_token_string params['code'])
+      #url = @oauth.url_for_access_token params['code'], :callback => url_for(:action => 'login_extended')
+      result_hash = @oauth.get_access_token_info params['code'], :callback => url_for(:action => 'login_extended') #@oauth.parse_token_string(@oauth.fetch_token_string :code => params['code'])
       user_token = result_hash['access_token']
       expires_at = result_hash['expires'] + Time.now
       logged_in = true
@@ -21,6 +21,14 @@ class AuthController < ApplicationController
       logged_in = false
       redirect_to :action => 'index'
     end
+  end
+
+  def login_extended
+    result_hash = params['access_token']
+    user_token = result_hash['access_token']
+    expires_at = result_hash['expires'] + Time.now
+    logged_in = true
+    redirect_to :controller => 'home', :action => 'list'
   end
 
   def logout
