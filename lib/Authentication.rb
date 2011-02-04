@@ -27,11 +27,11 @@ module Authentication
       session[:access_token] || reset_token
     end
 
-    def expires_at time
-      session[:expires_at] || Time.now - 10
+    def expires_at
+      Time.parse(session[:expires_at] || Time.now - 10)
     end
 
     def expires_at= time
-      session[:expires_at] = time
+      session[:expires_at] = time.to_s
     end
 end

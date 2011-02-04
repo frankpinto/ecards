@@ -9,29 +9,18 @@ class AuthController < ApplicationController
   end
 
   def login
-    if params['access_token']
-      render :text => params['access_token']
-      return
-    end
     if params['code']
       @oauth = Koala::Facebook::OAuth.new 'http://tangibleecards.com/auth/login'
       #url = @oauth.url_for_access_token params['code'], :callback => url_for(:action => 'login_extended')
       result_hash = @oauth.get_access_token_info params['code'] #@oauth.parse_token_string(@oauth.fetch_token_string :code => params['code'])
       user_token = result_hash['access_token']
-      expires_at = result_hash['expires'] + Time.now
+      expires_at = result_hash['expires'].to_i + Time.now
       logged_in = true
       redirect_to :controller => 'home', :action => 'list'
     else
       logged_in = false
       redirect_to :action => 'index'
     end
-  end
-
-  def login_extended
-    user_token = params['access_token']
-    expires_at = params['expires'] + Time.now
-    logged_in = true
-    redirect_to :controller => 'home', :action => 'list'
   end
 
   def logout
