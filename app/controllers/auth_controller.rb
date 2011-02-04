@@ -14,7 +14,7 @@ class AuthController < ApplicationController
       #url = @oauth.url_for_access_token params['code'], :callback => url_for(:action => 'login_extended')
       result_hash = @oauth.get_access_token_info params['code'] #@oauth.parse_token_string(@oauth.fetch_token_string :code => params['code'])
       user_token = result_hash['access_token']
-      expires_at = result_hash['expires'].to_i + Time.now
+      expires_at = Time.now + result_hash['expires'].to_i
       logged_in = true
       redirect_to :controller => 'home', :action => 'list'
     else
