@@ -66,3 +66,8 @@ div.box {
   border: 4px dotted black;
   float: left;
 }
+
+div.box img {
+  width: 90%;
+  margin: 4%;
+}

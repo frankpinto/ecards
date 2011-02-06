@@ -6,13 +6,13 @@
   <div id="content" class="centered">
     <div id="first" class="box">
       <!--<span class="fb_button_text">Login with Facebook</span>-->
-      <%= link_to 'Login with Facebook', @oauth.url_for_oauth_code(:permissions => 'user_birthday,friends_birthday', :callback => url_for(:controller => 'auth', :action => 'login', :only_path => false)) %>
+      <%= link_to '<img src="/images/login-signup-login.png" />', @oauth.url_for_oauth_code(:permissions => 'user_birthday,friends_birthday', :callback => url_for(:controller => 'auth', :action => 'login', :only_path => false)) %>
     </div>
     <div id="second" class="box">
-      
+      <img src="/images/letter_writing.jpg" class="logo"/>
     </div>
     <div id="third" class="box">
-      
+      <img src="/images/mailbox.gif" class="logo"/>
     </div>
   </div>
 </div>
